@@ -21,9 +21,9 @@ while true
   end
 
   # dynamic weather API
-  weather = HTTP.get("https://api.openweathermap.org/data/2.5/weather?q=#{city_response}&units=#{temperature_response}&appid=#{ENV["OPEN_WEATHER_API_KEY"]}")
+  response = HTTP.get("https://api.openweathermap.org/data/2.5/weather?q=#{city_response}&units=#{temperature_response}&appid=#{ENV["OPEN_WEATHER_API_KEY"]}")
 
-  weather = weather.parse(:json)
+  weather = response.parse(:json)
 
 
   p city_name = weather["name"]
