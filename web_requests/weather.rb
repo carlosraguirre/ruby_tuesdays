@@ -5,8 +5,14 @@ weather = HTTP.get("https://api.openweathermap.org/data/2.5/weather?q=chicago&un
 weather = weather.parse(:json)
 
 # display current forecast
-p city_name = weather["name"]
-p temperature_min = weather["main"]["temp_min"]
-p temperature_max = weather["main"]["temp_max"]
-p description = weather["weather"][0]["description"]
-p wind_speed = weather["wind"]["speed"]
+city_name = weather["name"]
+temperature_min = weather["main"]["temp_min"]
+temperature_max = weather["main"]["temp_max"]
+description = weather["weather"][0]["description"]
+wind_speed = weather["wind"]["speed"]
+
+pp "The current weather in #{city_name}:
+    Minimum temperature today: #{temperature_min}
+    Maximum temperature today: #{temperature_max}
+    Skies: #{description}
+    Wind speed: #{wind_speed}"
